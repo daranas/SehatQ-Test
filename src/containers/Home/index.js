@@ -4,6 +4,7 @@ import { Container } from 'semantic-ui-react';
 // components
 import TopBar from '../../components/TopBar';
 import NavBar from '../../components/NavBar';
+import CategoryThumb from '../../components/Category';
 import ProductThumb from '../../components/Product/Thumbnail';
 
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
         <title>SehatQ - Home</title>
       </Helmet>
       <TopBar/>
-
+      <CategoryThumb/>
       <Container>
         <ProductThumb/>
       </Container>

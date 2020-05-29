@@ -1,14 +1,19 @@
 import React from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react';
+import { createUseStyles } from 'react-jss';
 
-const Grid = () => {
-  const cardProduct = {
-    width: '100%',
+const useStyles = createUseStyles({
+  cardProduct: {
+    width: '100%!important',
     marginTop: 10,
   }
+});
+
+const Grid = () => {
+  const classes = useStyles();
 
   return (
-    <Card style={cardProduct}>
+    <Card className={classes.cardProduct}>
       <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
       <Card.Content>
         <Card.Header>Matthew</Card.Header>

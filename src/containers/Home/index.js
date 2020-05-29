@@ -1,8 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { Container } from 'semantic-ui-react';
 // components
 import TopBar from '../../components/TopBar';
 import NavBar from '../../components/NavBar';
+import ProductThumb from '../../components/Product/Thumbnail';
 
 const Home = () => {
   return (
@@ -11,7 +13,11 @@ const Home = () => {
         <title>SehatQ - Home</title>
       </Helmet>
       <TopBar/>
-      <h1>Home</h1>
+
+      <Container>
+        <ProductThumb/>
+      </Container>
+
       <NavBar/>
     </React.Fragment>
   );

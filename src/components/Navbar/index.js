@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu } from 'semantic-ui-react';
 
-const Navbar = () => {
+const NavBar = () => {
   // style
   const navbarWrapper = {
     position: 'absolute',
@@ -24,4 +24,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar;
+export default NavBar;

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 // components
-import Navbar from '../../components/Navbar';
+import TopBar from '../../components/TopBar';
+import NavBar from '../../components/NavBar';
 
 const Home = () => {
   return (
@@ -9,8 +10,9 @@ const Home = () => {
       <Helmet>
         <title>SehatQ - Home</title>
       </Helmet>
+      <TopBar/>
       <h1>Home</h1>
-      <Navbar/>
+      <NavBar/>
     </React.Fragment>
   );
 }

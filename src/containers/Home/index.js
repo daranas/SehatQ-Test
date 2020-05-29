@@ -12,7 +12,7 @@ const useStyles = createUseStyles({
   mainWrapper: {
     marginLeft: 'auto',
     marginRight: 'auto',
-    maxWidth: 640,
+    maxWidth: 560,
     background: '#ffffff',
     padding: '0 18px 70px'
   }

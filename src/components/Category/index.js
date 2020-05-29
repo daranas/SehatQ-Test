@@ -6,7 +6,6 @@ const useStyles = createUseStyles({
   wrapper: {
     overflow: 'auto',
     whiteSpace: 'nowrap',
-    paddingRight: 15,
     '&::-webkit-scrollbar': {
       width: 0,
       height: 0

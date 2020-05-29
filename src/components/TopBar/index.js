@@ -5,7 +5,7 @@ import { createUseStyles } from 'react-jss';
 const useStyles = createUseStyles({
   topbarWrapper: {
     paddingTop: '12px!important',
-    marginBottom: '5px!important'
+    marginBottom: '10px!important'
   },
   iconLeft: {
     fontSize: 26,

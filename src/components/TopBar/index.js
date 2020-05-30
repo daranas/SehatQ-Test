@@ -12,6 +12,12 @@ const useStyles = createUseStyles({
     paddingTop: '8px!important',
     paddingLeft: '14px!important',
     paddingRight: '0!important'
+  },
+  searchInput: {
+    position: 'relative',
+    '& input': {
+      borderRadius: '30px!important'
+    }
   }
 })
 
@@ -25,7 +31,7 @@ const TopBar = () => {
           <Grid.Column width={2} className={classes.iconLeft}>
             <Icon name='heart outline' />
           </Grid.Column>
-          <Grid.Column width={14}>
+          <Grid.Column width={14} className={classes.searchInput}>
             <Input fluid icon='search' iconPosition='left' placeholder='Search...' />
           </Grid.Column>
         </Grid.Row>

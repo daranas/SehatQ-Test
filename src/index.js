@@ -5,17 +5,39 @@ import { BrowserRouter } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import configureStore from './store';
 import Routes from './routes';
+import { createUseStyles } from 'react-jss';
 
 // style
 import 'semantic-ui-css/semantic.min.css';
+
+const useStyles = createUseStyles({
+  mainWrapper: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    maxWidth: 560,
+    background: '#ffffff',
+    padding: '0 15px 70px',
+    borderLeft: '1px solid #eee',
+    borderRight: '1px solid #eee'
+  },
+  '@media only screen and (max-width: 767px)': {
+    mainWrapper: {
+      paddingLeft: 0,
+      paddingRight: 0,
+      border: 0
+    }
+  }
+});
 
 const store = configureStore();
 
 const Root = () => (
   <Provider store={store}>
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
+    <div className={useStyles().mainWrapper}>
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </div>
   </Provider>
 );
 render(

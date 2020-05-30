@@ -9,29 +9,25 @@ const useStyles = createUseStyles({
   }
 });
 
-const Grid = () => {
+const Thumbnail = (props) => {
   const classes = useStyles();
+  const { products } = props;
 
   return (
-    <Card className={classes.cardProduct}>
-      <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-      <Card.Content>
-        <Card.Header>Matthew</Card.Header>
-        <Card.Meta>
-          <span className='date'>Joined in 2015</span>
-        </Card.Meta>
-        <Card.Description>
-          Matthew is a musician living in Nashville.
-        </Card.Description>
-      </Card.Content>
-      <Card.Content extra>
-        <a>
-          <Icon name='user' />
-          22 Friends
-        </a>
-      </Card.Content>
-    </Card>
+    <React.Fragment>
+    {Object.keys(products).length > 1 && products.map((item, i) =>
+      <Card className={classes.cardProduct} key={i}>
+        <Image src={item.imageUrl} wrapped ui={false} />
+        <Card.Content>
+          <Card.Header>{item.title}</Card.Header>
+          <Card.Meta>
+            <span className='date'>{item.price}</span>
+          </Card.Meta>
+        </Card.Content>
+      </Card>
+    )}
+    </React.Fragment>
   )
 }
 
-export default Grid;
+export default Thumbnail;

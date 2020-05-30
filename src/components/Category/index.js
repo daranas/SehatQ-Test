@@ -20,7 +20,7 @@ const useStyles = createUseStyles({
     width: '80px!important',
     display: 'inline-block!important',
     marginTop: '0!important',
-    marginBottom: '15px!important',
+    marginBottom: '0!important',
     marginRight: '15px!important',
     textAlign: 'center!important',
     border: '0px!important',
@@ -39,66 +39,20 @@ const useStyles = createUseStyles({
   }
 });
 
-const Category = () => {
+const Category = (props) => {
   const classes = useStyles();
+  const { categories } = props;
 
   return (
     <div className={classes.wrapper}>
-      <Card className={classes.thumbnail}>
-        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
+      {Object.keys(categories).length > 1 && categories.map((item, i) =>
+      <Card className={classes.thumbnail} key={i}>
+        <Image src={item.imageUrl} wrapped ui={false} />
         <Card.Content>
-          <Card.Header>Matthew</Card.Header>
+          <Card.Header>{item.name}</Card.Header>
         </Card.Content>
       </Card>
-
-      <Card className={classes.thumbnail}>
-        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-        <Card.Content>
-          <Card.Header>Matthew</Card.Header>
-        </Card.Content>
-      </Card>
-
-      <Card className={classes.thumbnail}>
-        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-        <Card.Content>
-          <Card.Header>Matthew</Card.Header>
-        </Card.Content>
-      </Card>
-
-      <Card className={classes.thumbnail}>
-        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-        <Card.Content>
-          <Card.Header>Matthew</Card.Header>
-        </Card.Content>
-      </Card>
-
-      <Card className={classes.thumbnail}>
-        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-        <Card.Content>
-          <Card.Header>Matthew</Card.Header>
-        </Card.Content>
-      </Card>
-
-      <Card className={classes.thumbnail}>
-        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-        <Card.Content>
-          <Card.Header>Matthew</Card.Header>
-        </Card.Content>
-      </Card>
-
-      <Card className={classes.thumbnail}>
-        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-        <Card.Content>
-          <Card.Header>Matthew</Card.Header>
-        </Card.Content>
-      </Card>
-
-      <Card className={classes.thumbnail}>
-        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-        <Card.Content>
-          <Card.Header>Matthew</Card.Header>
-        </Card.Content>
-      </Card>
+      )}
     </div>
   )
 }

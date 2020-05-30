@@ -14,7 +14,13 @@ const useStyles = createUseStyles({
     marginRight: 'auto',
     maxWidth: 560,
     background: '#ffffff',
-    padding: '0 18px 70px'
+    padding: '0 15px 70px',
+  },
+  '@media only screen and (max-width: 767px)': {
+    mainWrapper: {
+      paddingLeft: 0,
+      paddingRight: 0
+    }
   }
 })
 
@@ -27,9 +33,9 @@ const Home = () => {
         <title>SehatQ - Home</title>
       </Helmet>
       <div className={classes.mainWrapper}>
-        <TopBar/>
-        <CategoryThumb/>
         <Container>
+          <TopBar/>
+          <CategoryThumb/>
           <ProductThumb/>
         </Container>
 

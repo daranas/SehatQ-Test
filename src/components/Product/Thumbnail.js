@@ -6,6 +6,21 @@ const useStyles = createUseStyles({
   cardProduct: {
     width: '100%!important',
     marginTop: 10,
+  },
+  cardContent: {
+    position: 'relative'
+  },
+  cardPrice: {
+    marginTop: 3
+  },
+  cardFav: {
+    fontSize: 22,
+    position: 'absolute',
+    top: 24,
+    right: 14
+  },
+  favActive: {
+    color: '#F24336'
   }
 });
 
@@ -18,11 +33,14 @@ const Thumbnail = (props) => {
     {Object.keys(products).length > 1 && products.map((item, i) =>
       <Card className={classes.cardProduct} key={i}>
         <Image src={item.imageUrl} wrapped ui={false} />
-        <Card.Content>
+        <Card.Content className={classes.cardContent}>
           <Card.Header>{item.title}</Card.Header>
-          <Card.Meta>
-            <span className='date'>{item.price}</span>
+          <Card.Meta className={classes.cardPrice}>
+            <span>{item.price}</span>
           </Card.Meta>
+          <div className={classes.cardFav}>
+          {item.loved > 0 ? <Icon name='heart' className={classes.favActive} /> : <Icon name='heart outline' />}
+          </div>
         </Card.Content>
       </Card>
     )}

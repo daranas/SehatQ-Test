@@ -1,6 +1,7 @@
 import React from 'react';
 import { Menu } from 'semantic-ui-react';
 import { createUseStyles } from 'react-jss';
+import { Link } from "react-router-dom";
 
 const useStyles = createUseStyles({
   wrapper: {
@@ -17,10 +18,18 @@ const NavBar = () => {
   return (
     <div className={classes.wrapper}>
       <Menu widths={4}>
-        <Menu.Item name='home'/>
-        <Menu.Item name='feed'/>
-        <Menu.Item name='cart'/>
-        <Menu.Item name='profile'/>
+        <Menu.Item as={Link} to="/">
+          home
+        </Menu.Item>
+        <Menu.Item as={Link} to="/feed">
+          feed
+        </Menu.Item>
+        <Menu.Item as={Link} to="/cart">
+          cart
+        </Menu.Item>
+        <Menu.Item as={Link} to="/profile">
+          profile
+        </Menu.Item>
       </Menu>
     </div>
   )

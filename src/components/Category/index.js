@@ -45,7 +45,7 @@ const Category = (props) => {
 
   return (
     <div className={classes.wrapper}>
-      {Object.keys(categories).length > 1 && categories.map((item, i) =>
+      {Object.keys(categories).length > 1 && categories.category.map((item, i) =>
       <Card className={classes.thumbnail} key={i}>
         <Image src={item.imageUrl} wrapped ui={false} />
         <Card.Content>

@@ -1,4 +1,4 @@
-import { PURCHASED } from '../actions/actionTypes';
+import { WISHLIST } from '../actions/actionTypes';
 
 const initialState = {
   productPromo: []
@@ -6,7 +6,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case PURCHASED.SUCCESS:
+    case WISHLIST.SUCCESS:
       return {
         ...state,
         productPromo: [...state.productPromo, action.payload]

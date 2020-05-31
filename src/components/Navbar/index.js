@@ -19,16 +19,16 @@ const NavBar = () => {
     <div className={classes.wrapper}>
       <Menu widths={4}>
         <Menu.Item as={Link} to="/">
-          home
+          Home
         </Menu.Item>
-        <Menu.Item as={Link} to="/feed">
-          feed
+        <Menu.Item as={Link} to="/">
+          Feed
         </Menu.Item>
         <Menu.Item as={Link} to="/cart">
-          cart
+          Cart
         </Menu.Item>
         <Menu.Item as={Link} to="/profile">
-          profile
+          Profile
         </Menu.Item>
       </Menu>
     </div>

@@ -35,9 +35,9 @@ const Thumbnail = (props) => {
 
   return (
     <React.Fragment>
-    {Object.keys(products).length > 1 && products.map((item, i) =>
-    <Link to={`/product/${item.id}`} className={classes.cardLink}>
-      <Card className={classes.cardProduct} key={i}>
+    {Object.keys(products).length > 1 && products.productPromo.map((item, i) =>
+    <Link to={`/product/${item.id}`} className={classes.cardLink} key={i}>
+      <Card className={classes.cardProduct}>
         <Image src={item.imageUrl} wrapped ui={false} />
         <Card.Content className={classes.cardContent}>
           <Card.Header>{item.title}</Card.Header>

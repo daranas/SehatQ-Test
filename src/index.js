@@ -12,9 +12,11 @@ import 'semantic-ui-css/semantic.min.css';
 
 const useStyles = createUseStyles({
   mainWrapper: {
+    position: 'relative',
     marginLeft: 'auto',
     marginRight: 'auto',
     maxWidth: 560,
+    minHeight: '100vh',
     background: '#ffffff',
     padding: '0 15px 70px',
     borderLeft: '1px solid #eee',

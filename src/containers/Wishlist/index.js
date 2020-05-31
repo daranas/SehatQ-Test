@@ -7,13 +7,13 @@ import TopBar from '../../components/TopBar';
 import NavBar from '../../components/NavBar';
 import ProductList from '../../components/Product/Lists';
 
-const Purchased = () => {
-  const setData = useSelector(state => state.purchasedReducer);
+const Wishlist = () => {
+  const setData = useSelector(state => state.wishlistReducer);
 
   return (
     <React.Fragment>
       <Helmet>
-        <title>SehatQ - Purchased</title>
+        <title>SehatQ - Wishlist</title>
       </Helmet>
       
       <Container>
@@ -25,4 +25,4 @@ const Purchased = () => {
   );
 }
 
-export default Purchased;
+export default Wishlist;

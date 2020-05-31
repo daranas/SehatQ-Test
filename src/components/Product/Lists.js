@@ -1,44 +1,43 @@
 import React from 'react';
-import { Card, Icon, Image, Item } from 'semantic-ui-react';
+import { Item } from 'semantic-ui-react';
 import { createUseStyles } from 'react-jss';
+import { Link } from "react-router-dom";
 
 const useStyles = createUseStyles({
   listProduct: {
     width: '100%!important',
     marginTop: 10,
+  },
+  imgItem: {
+    textAlign: 'center',
+    '& img': {
+      width: 'auto!important',
+      maxHeight: 40,
+      margin: '0 auto'
+    }
+  },
+  '@media only screen and (max-width: 767px)': {
+    imgItem: {
+      display: 'none!important',
+    }
   }
 });
 
-const List = () => {
+const List = (props) => {
+  const { products } = props;
   const classes = useStyles();
 
   return (
-    <Item.Group className={classes.listProduct}>
-      <Item>
-        <Item.Image size='tiny' src='https://react.semantic-ui.com/images/wireframe/image.png' />
-
+    <Item.Group unstackable className={classes.listProduct}>
+      {Object.keys(products).length > 0 && products.productPromo.map((item, i) =>
+      <Item as={Link} to={`/product/${item.id}`} key={i}>
+        <Item.Image size='tiny' src={item.imageUrl} className={classes.imgItem} />
         <Item.Content>
-          <Item.Header as='a'>Header</Item.Header>
-          <Item.Meta>Description</Item.Meta>
-          <Item.Description>
-            <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
-          </Item.Description>
-          <Item.Extra>Additional Details</Item.Extra>
+          <Item.Header>{item.title}</Item.Header>
+          <Item.Meta>{item.price}</Item.Meta>
         </Item.Content>
       </Item>
-
-      <Item>
-        <Item.Image size='tiny' src='https://react.semantic-ui.com/images/wireframe/image.png' />
-
-        <Item.Content>
-          <Item.Header as='a'>Header</Item.Header>
-          <Item.Meta>Description</Item.Meta>
-          <Item.Description>
-            <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
-          </Item.Description>
-          <Item.Extra>Additional Details</Item.Extra>
-        </Item.Content>
-      </Item>
+      )}
     </Item.Group>
   )
 }
